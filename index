@@ -18,3 +18,10 @@ SELECT COUNT(*), year(order_date)
 FROM TAK18_Barlin.yl21_Orders 
 GROUP BY YEAR (order_date)
 ;
+
+#ülesanne5
+SELECT YEAR(order_date), SUM(price), ROUND(SUM(price), 2)
+FROM yl21_Orders
+LEFT JOIN yl21_Books ON yl21_Books.id=yl21_Orders.book_id
+GROUP BY YEAR (order_date)
+;
